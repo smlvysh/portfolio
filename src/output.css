@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -6,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-white: #fff;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -158,8 +160,140 @@
     display: none !important;
   }
 }
-@layer utilities;
+@layer utilities {
+  .ml-\[25px\] {
+    margin-left: 25px;
+  }
+  .flex {
+    display: flex;
+  }
+  .hidden {
+    display: none;
+  }
+  .table {
+    display: table;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-start {
+    justify-content: flex-start;
+  }
+  .gap-\[3px\] {
+    gap: 3px;
+  }
+  .gap-\[10px\] {
+    gap: 10px;
+  }
+  .gap-\[50px\] {
+    gap: 50px;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .bg-\[\#282c33\] {
+    background-color: #282c33;
+  }
+  .py-\[30px\] {
+    padding-block: 30px;
+  }
+  .text-\[\#abb2bf\] {
+    color: #abb2bf;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .max-md\:gap-\[20px\] {
+    @media (width < 48rem) {
+      gap: 20px;
+    }
+  }
+  .max-sm\:ml-\[0\] {
+    @media (width < 40rem) {
+      margin-left: 0;
+    }
+  }
+  .max-sm\:ml-\[3\] {
+    @media (width < 40rem) {
+      margin-left: 3;
+    }
+  }
+  .max-sm\:ml-\[3px\] {
+    @media (width < 40rem) {
+      margin-left: 3px;
+    }
+  }
+  .max-sm\:ml-\[5px\] {
+    @media (width < 40rem) {
+      margin-left: 5px;
+    }
+  }
+  .max-sm\:ml-\[10px\] {
+    @media (width < 40rem) {
+      margin-left: 10px;
+    }
+  }
+  .max-sm\:block {
+    @media (width < 40rem) {
+      display: block;
+    }
+  }
+  .max-sm\:hidden {
+    @media (width < 40rem) {
+      display: none;
+    }
+  }
+}
 .container1 {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
+  font-family: "Fira Code", monospace;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-outline-style: solid;
+    }
+  }
 }
